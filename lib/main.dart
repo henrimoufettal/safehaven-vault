@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/scan_screen.dart';
+import 'screens/scan_screen.dart'; // ✅ Make sure this file exists
 
 void main() {
   runApp(SafeHavenVaultApp());
@@ -10,10 +10,8 @@ class SafeHavenVaultApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'SafeHaven Vault',
-      theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
-      ),
-      home: ScanDocumentScreen(),
+      theme: ThemeData(primarySwatch: Colors.blueGrey),
+      home: ScanDocumentScreen(), // You can replace this with MenuScreen() later
       debugShowCheckedModeBanner: false,
     );
   }
