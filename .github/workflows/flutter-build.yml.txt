@@ -2,7 +2,7 @@ name: Build SafeHaven Vault APK
 
 on:
   push:
-    branches: [main]
+    branches: [master]
 
 jobs:
   build:

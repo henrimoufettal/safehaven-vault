@@ -24,31 +24,27 @@ class _ScanDocumentScreenState extends State<ScanDocumentScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Scan Document'),
-      ),
+      appBar: AppBar(title: Text('Scan Document')),
       body: Center(
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _scannedImage != null
+                ? Image.file(_scannedImage!)
+                : Icon(Icons.camera_alt, size: 80, color: Colors.grey),
+            SizedBox(height: 20),
+            Text(
               _scannedImage != null
-                  ? Image.file(_scannedImage!)
-                  : Icon(Icons.camera_alt, size: 80, color: Colors.grey),
-              SizedBox(height: 20),
-              Text(
-                _scannedImage != null
-                    ? 'Document scanned successfully.'
-                    : 'Tap below to scan a document using your camera.',
-                textAlign: TextAlign.center,
-              ),
-              SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: _pickImage,
-                child: Text('Scan Now'),
-              ),
-            ],
-          ),
+                  ? 'Document scanned successfully.'
+                  : 'Tap below to scan a document using your camera.',
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: _pickImage,
+              child: Text('Scan Now'),
+            ),
+          ],
         ),
       ),
     );
